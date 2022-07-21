@@ -43,3 +43,26 @@ func (repo *TaskRepository) FindById(id int)(task domain.Task, err error){
 	task.Content = content
 	return
  }
+
+func (repo *TaskRepository) FindAll(tasks domain.Tasks, err error){
+	rows, err := repo.Query("SELECT id, title, conetent FORM tasks")
+	defer rows.Close()
+	if err != nil {
+		return
+	}
+	for rows.Next(){
+		var id int
+		var title string
+		var content string
+		if err = rows.Scan(&id, &title, &content); err != nil {
+			return
+		}
+		task := domain.Task{
+			ID:       id,
+			Title:    title,
+			Content:  content,
+		}
+		tasks = append(tasks, task)
+	}
+	return tasks
+}
