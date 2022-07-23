@@ -11,7 +11,7 @@ type TaskRepository interface {
 }
 
 func (repo *TaskRepository) Store(task domain.Task) (err error) {
-	_, err := repo.Execute(
+	_, err = repo.Execute(
 		"INSERT INTO tasks (title, content) VALUES(?,?)",
 		task.Title,
 		task.Content
