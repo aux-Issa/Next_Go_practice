@@ -2,8 +2,9 @@ package infrastructure
 
 import (
 	"database/sql"
-	// _ "github.com/go-sql-driver/mysql"
+
 	"github.com/aux-Issa/Next_Go_practice/app/interface/database"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 type SqlHandler struct {

@@ -1,9 +1,9 @@
 package domain
 
 type Task struct {
-	ID       int
-	Tytle    string
-	Contenct string
+	ID      int
+	Title   string
+	Content string
 }
 
 type Tasks []Task
