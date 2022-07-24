@@ -21,7 +21,7 @@ func (repo *TaskRepository) Store(task domain.Task) (err error) {
 }
 
 func (repo *TaskRepository) FindById(given_id int) (task domain.Task, err error) {
-	row, err := repo.Query("SELECT id, title, content FROM tasks WHERE id=?", given_id)
+	row, err := repo.Query("SELECT id, title, content FROM tasks WHERE id = ?", given_id)
 	defer row.Close()
 	if err != nil {
 		return
@@ -43,7 +43,7 @@ func (repo *TaskRepository) FindById(given_id int) (task domain.Task, err error)
 }
 
 func (repo *TaskRepository) FindAll() (tasks domain.Tasks, err error) {
-	rows, err := repo.Query("SELECT id, title, conetent FORM tasks")
+	rows, err := repo.Query("SELECT id, title, content FROM tasks")
 	defer rows.Close()
 	// if err != nil {
 	// 	// return err
