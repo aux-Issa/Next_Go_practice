@@ -8,6 +8,6 @@ WORKDIR ${ROOT}
 ENV GD111MODULE=on
 
 COPY . .
-EXPOSE 1234
+EXPOSE 1323
 RUN go install github.com/cosmtrek/air@latest
 CMD "air"
