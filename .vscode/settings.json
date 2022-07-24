@@ -1,0 +1,11 @@
+{
+  "workbench.colorCustomizations": {
+    // "editor.selectionBackground": "#d7d8da", //選択範囲の背景色
+    // "editor.selectionHighlightBackground": "#d3d3d3", //カーソル位置の背景色
+    "editor.lineHighlightBackground": "#37373a", //カーソル行の背景色
+    "editor.findMatchHighlightBackground": "#264eff", //検索文字列の背景色
+    "editor.findMatchBorder": "#ff6347", //フォーカスされている検索文字列の枠線の色
+    "editor.findMatchBackground": "#008b8b", //フォーカスされている検索文字列の背景色
+    "tab.activeBackground": "#426767cc", //タブの背景色
+}
+}

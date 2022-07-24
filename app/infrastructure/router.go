@@ -12,6 +12,7 @@ func Init() {
 
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
+	e.Use(middleware.CORS())
 
 	e.GET("/tasks", func(c echo.Context) error {
 		return taskController.Index(c)
