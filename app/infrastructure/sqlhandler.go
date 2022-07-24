@@ -17,8 +17,8 @@ type SqlRow struct {
 	Rows *sql.Rows
 }
 
-func NewSqlHandler(conn *sql.DB) *SqlHandler {
-	conn, err := sql.Open("mysql", "")
+func NewSqlHandler() *SqlHandler {
+	conn, err := sql.Open("mysql", "user:password@tcp(db-dev:3306)/db_dev")
 	if err != nil {
 		panic(err.Error())
 	}

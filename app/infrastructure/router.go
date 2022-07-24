@@ -1,8 +1,6 @@
 package infrastructure
 
 import (
-	"database/sql"
-
 	"github.com/aux-Issa/Next_Go_practice/app/interface/controller"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
@@ -10,7 +8,7 @@ import (
 
 func Init() {
 	e := echo.New()
-	taskController := controller.NewTaskController(NewSqlHandler(&sql.DB{}))
+	taskController := controller.NewTaskController(NewSqlHandler())
 
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
@@ -18,12 +16,12 @@ func Init() {
 	e.GET("/tasks", func(c echo.Context) error {
 		return taskController.Index(c)
 	})
-	e.GET("/task/:id", func(c echo.Context) error {
+	e.GET("/tasks/:id", func(c echo.Context) error {
 		return taskController.Show(c)
 	})
 	e.POST("/create", func(c echo.Context) error {
-		return taskController.Show(c)
+		return taskController.Create(c)
 	})
 
-	e.Logger.Fatal(e.Start(":12345"))
+	e.Logger.Fatal(e.Start(":1323"))
 }
