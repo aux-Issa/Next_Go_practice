@@ -30,6 +30,7 @@ func (b *bike) drive() string {
 	return b.name
 }
 
+// main function has already defined in same path
 func main() {
 	car := car{
 		horn:    "honk",
