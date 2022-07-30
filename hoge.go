@@ -40,6 +40,8 @@ func main() {
 		name:  "bike",
 		heavy: true,
 	}
+
+	// carとbikeをinterfaceに代入することでポリモーフィズムを実現
 	vehicles := []vehicle{&car, &bike}
 
 	for _, v := range vehicles {
